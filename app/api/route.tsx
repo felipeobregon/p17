@@ -26,7 +26,7 @@ function createMap(responseText: string) {
         const [key, value] = lines[i].split('=')
         defMap.set(key, value)
     }
-    Object.fromEntries(defMap)
+    return Object.fromEntries(defMap)
 }
 
 export async function GET() {

@@ -10,16 +10,16 @@ const openai = new OpenAIApi(configuration);
 
 function createPrompt(text: string) {
 
-    const prompt = `Define each word of the following: \
+    const prompt = `Romanize each Korean character: \
     "${text}". \
-     Use the following format: WORD=DEF. One word and def per line`
+     Use the following format: CHAR=ROM. One word and definition per line.`
 
      return prompt
     
 }
 
 function createMap(responseText: string) {
-    const lines = responseText.split('\n\n')
+    const lines = responseText.split('\n')
     const defMap = new Map<string, string>()
 
     for (let i = 0; i < lines.length; i++) {
@@ -39,6 +39,8 @@ export async function POST(request: Request) {
     });
 
     let responseText = response.data.choices[0].text
+
+    console.log(responseText)
 
     return NextResponse.json(createMap(responseText))
 

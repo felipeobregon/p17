@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 
 export default function Home() {
 
-  const text = "hello how are you"
+  const text = "한 날, 작은 마을에 어느 무서운 고양이가 나타났어요. 그 고양이는 검은 "
 
   const [defMap, setDefMap] = useState(new Map())
 

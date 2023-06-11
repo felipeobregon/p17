@@ -31,7 +31,8 @@ function createMap(responseText: string) {
 
 export async function POST(request: Request) {
 
-    request.text()
+
+    return request.text()
         .then(text => {
             return openai.createCompletion({
                 model: "text-davinci-003",

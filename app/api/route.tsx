@@ -30,24 +30,16 @@ function createMap(responseText: string) {
 }
 
 export async function POST(request: Request) {
+    let text = await request.text()
+    let response = await openai.createCompletion({
+        model: "text-davinci-003",
+        prompt: createPrompt(text),
+        max_tokens: 200,
+        temperature: 0,
+    });
 
+    let responseText = response.data.choices[0].text
 
-    return request.text()
-        .then(text => {
-            return openai.createCompletion({
-                model: "text-davinci-003",
-                prompt: createPrompt(text),
-                max_tokens: 200,
-                temperature: 0,
-            });
-        })
-        .then(response => {
-            const responseText = response.data.choices[0].text
-
-            console.log(responseText)
-        
-        
-            return NextResponse.json(createMap(responseText))
-        })
+    return NextResponse.json(createMap(responseText))
 
 }

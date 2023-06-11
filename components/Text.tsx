@@ -1,7 +1,12 @@
-export default function Text({text}: {text: string}) {
+type Props = {
+    text: string;
+    defMap: Map<string, string>;
+}
+
+export default function Text({text, defMap}: Props) {
 
     function handleClick(word: string) {
-        alert(word.toUpperCase())
+        alert(defMap.get(word))
     }
 
     const words = text.split(' ').map(word => {

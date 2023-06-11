@@ -29,7 +29,7 @@ function createMap(responseText: string) {
     return Object.fromEntries(defMap)
 }
 
-export async function GET() {
+export async function POST(request: Request) {
     let response;
     try {
         response = await openai.createCompletion({

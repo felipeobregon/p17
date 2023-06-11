@@ -10,12 +10,12 @@ export default function Text({text, defMap}: Props) {
     }
 
     const words = text.split(' ').map(word => {
-        return <span onClick={() => handleClick(word)}>{word}</span>
+        return <span className="hover:bg-blue-500 hover:text-white"onClick={() => handleClick(word)}>{word}&nbsp;</span>
     })
 
     return (
-        <>
+        <p className="text-4xl">
             {words}
-        </>
+        </p>
     )
 }

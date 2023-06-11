@@ -17,6 +17,18 @@ function createPrompt(text: string) {
      return prompt
     
 }
+
+function createMap(responseText: string) {
+    const lines = responseText.split('\n\n')
+    const defMap = new Map<string, string>()
+
+    for (let i = 0; i < lines.length; i++) {
+        const [key, value] = lines[i].split('=')
+        defMap.set(key, value)
+    }
+    Object.fromEntries(defMap)
+}
+
 export async function GET() {
     let response;
     try {
@@ -36,14 +48,5 @@ export async function GET() {
     console.log(responseText)
 
 
-    const lines = responseText.split('\n\n')
-    const defMap = new Map<string, string>()
-
-    for (let i = 0; i < lines.length; i++) {
-        const [key, value] = lines[i].split('=')
-        defMap.set(key, value)
-    }
-    console.log(defMap)
-
-    return NextResponse.json(Object.fromEntries(defMap))
+    return NextResponse.json(createMap(responseText))
 }

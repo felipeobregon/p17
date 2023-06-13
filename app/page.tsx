@@ -27,7 +27,7 @@ export default function Home() {
 
 
   return (
-    <div className="w-1/2 mx-auto h-screen">
+    <div className="flex flex-col w-1/2 mx-auto h-screen">
       <h1 className="text-blue-500">Graded Korean!</h1>
       <Text text={text} defMap={defMap}/>
       <Definition />

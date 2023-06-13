@@ -9,8 +9,8 @@ export default function Text({text, defMap}: Props) {
         alert(defMap.get(word))
     }
 
-    const words = text.split(' ').map(word => {
-        return <span className="rounded-lg hover:bg-blue-500 hover:text-white"onClick={() => handleClick(word)}>{word}&nbsp;</span>
+    const words = text.split(' ').map((word, index) => {
+        return <span key={index} className="rounded-lg hover:bg-blue-500 hover:text-white"onClick={() => handleClick(word)}>{word}&nbsp;</span>
     })
 
     return (

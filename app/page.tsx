@@ -1,5 +1,6 @@
 'use client'
 
+import Definition from '@/components/Definition'
 import Text from '@/components/Text'
 import { useEffect, useState } from 'react'
 
@@ -29,6 +30,7 @@ export default function Home() {
     <div className="w-1/2 mx-auto h-screen">
       <h1 className="text-blue-500">Graded Korean!</h1>
       <Text text={text} defMap={defMap}/>
+      <Definition />
     </div>
   )
 }

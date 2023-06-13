@@ -10,9 +10,9 @@ const openai = new OpenAIApi(configuration);
 
 function createPrompt(text: string) {
 
-    const prompt = `Romanize each Korean character: \
+    const prompt = `Romanize each Korean word. Words are separated by spaces.: \
     "${text}". \
-     Use the following format: CHAR=ROM. One word and definition per line.`
+     Use the following format: WORD=ROM. One word and definition per line.`
 
      return prompt
     

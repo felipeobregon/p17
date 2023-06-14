@@ -3,6 +3,7 @@
 import Definition from '@/components/Definition'
 import Text from '@/components/Text'
 import { useEffect, useState } from 'react'
+import ReactLoading from 'react-loading'
 
 export default function Home() {
 
@@ -38,6 +39,7 @@ export default function Home() {
     <div className="flex flex-col w-1/2 mx-auto h-screen">
       <h1 className="text-blue-500">Graded Korean!</h1>
       <Text text={text} defMap={defMap} handleClick={handleClick}/>
+      {defMap.size == 0 && <ReactLoading/>}
       <Definition def={selectedWord}/>
     </div>
   )

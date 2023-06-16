@@ -4,11 +4,12 @@ type Props = {
     handleClick: (word: string) => void
 }
 
-export default function Text({text, defMap, handleClick}: Props) {
-
+export default function Text({ text, defMap, handleClick }: Props) {
 
     const words = text.split(' ').map((word, index) => {
-        return <span key={index} className="rounded-lg hover:bg-blue-500 hover:text-white"onClick={() => handleClick(word)}>{word}&nbsp;</span>
+        return <span key={index}
+            className="rounded-lg hover:bg-blue-500 hover:text-white"
+            onClick={() => handleClick(word)}>{word}&nbsp;</span>
     })
 
     return (

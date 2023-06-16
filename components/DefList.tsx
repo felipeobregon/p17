@@ -16,11 +16,11 @@ export default function DefList({ words }: Props) {
         const fetchData = async () => {
             await Promise.all(words.map((x, i) =>
                 fetch('/api/define', {method: 'POST', body: words[i]})
-                .then(res => res.text())
+                .then(res => res.json())
                 .then(data => {
                     setDefList(prevDefList => {
                         const newDefList = Array.from(prevDefList)
-                        newDefList[i] = data
+                        newDefList[i] = data.definition
                         return newDefList
                     })
                 })  

@@ -9,7 +9,7 @@ const openai = new OpenAIApi(configuration);
 
 function createPrompt(text: string) {
 
-    const prompt = `Define "${text}"`
+    const prompt = `Define "${text} in English."`
     return prompt
 
 }
@@ -24,8 +24,8 @@ export async function POST(request: Request) {
         temperature: 0,
     });
 
-    let responseText = response.data.choices[0].text
+    let definition = response.data.choices[0].text
     
-    return NextResponse.json({responseText})
+    return NextResponse.json({definition})
 
 }

@@ -9,7 +9,7 @@ const openai = new OpenAIApi(configuration);
 
 function createPrompt(text: string) {
 
-    const prompt = `Define "${text} in English."`
+    const prompt = `Define "${text}" in English.`
     return prompt
 
 }

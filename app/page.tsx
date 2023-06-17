@@ -41,6 +41,7 @@ export default function Home() {
       <h1 className="text-blue-500">Graded Korean!</h1>
       <Text text={text} defMap={defMap} handleClick={handleClick}/>
       {defMap.size == 0 && <ReactLoading/>}
+      <button className="bg-pink-100">Create new story</button>
       <Definition def={selectedWord}/>
       <DefList words={text.split(' ')}/>
     </div>

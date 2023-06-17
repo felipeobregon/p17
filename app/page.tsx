@@ -5,6 +5,7 @@ import Definition from '@/components/Definition'
 import Text from '@/components/Text'
 import { useEffect, useState } from 'react'
 import ReactLoading from 'react-loading'
+import createList from '@/lib/create-list'
 
 export default function Home() {
 
@@ -23,13 +24,9 @@ export default function Home() {
   // make fetch to create defMap
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const response = await fetch('/api', {method: 'POST', body: text});
-        const jsonData = await response.json();
-        setDefMap(new Map(Object.entries(jsonData)));
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+      const newMap = await createList(text.split(' '))
+
+      setDefMap(newMap)
     }
 
     fetchData()

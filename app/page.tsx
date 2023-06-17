@@ -40,7 +40,6 @@ export default function Home() {
       {defMap.size == 0 && <ReactLoading/>}
       <button className="bg-pink-100">Create new story</button>
       <Definition def={selectedWord}/>
-      <DefList words={text.split(' ')}/>
     </div>
   )
 }

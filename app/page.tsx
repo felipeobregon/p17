@@ -6,11 +6,11 @@ import Text from '@/components/Text'
 import { useEffect, useState } from 'react'
 import ReactLoading from 'react-loading'
 import createList from '@/lib/create-list'
+import getStory from '@/lib/get-story'
 
 export default function Home() {
 
-  const text = "한 날, 작은 마을에 어느 무서운 고양이가 나타났어요. 그 고양이는 검은 "
-
+  const [storyText, setStoryText] = useState<string>('')
   const [defMap, setDefMap] = useState(new Map())
 
   // last clicked word
@@ -24,20 +24,29 @@ export default function Home() {
   // make fetch to create defMap
   useEffect(() => {
     const fetchData = async () => {
-      const newMap = await createList(text.split(' '))
+      const newMap = await createList(storyText.split(' '))
 
       setDefMap(newMap)
     }
 
     fetchData()
-  }, [])
+  }, [storyText])
 
+
+  // load storyText
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await getStory()
+      setStoryText(res.story)
+    }
+    fetchData()
+  }, [])
 
   return (
     <div className="flex flex-col max-w-2xl mx-auto h-screen">
       <h1 className="text-blue-500">Graded Korean!</h1>
-      <Text text={text} defMap={defMap} handleClick={handleClick}/>
-      {defMap.size == 0 && <ReactLoading/>}
+      <Text text={storyText} defMap={defMap} handleClick={handleClick} />
+      {defMap.size == 0 && <ReactLoading />}
       <button className="bg-pink-100">Create new story</button>
       <Definition def={selectedWord}/>
     </div>

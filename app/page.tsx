@@ -18,7 +18,7 @@ export default function Home() {
   const [selectedWord, setSelectedWord] = useState('')
 
   const handleClick = (word: string) => {
-    setSelectedWord(word + ' ' + defMap.get(word))
+    setSelectedWord(word)
   }
 
   // make fetch to create defMap
@@ -48,7 +48,7 @@ export default function Home() {
       <Text text={storyText} defMap={defMap} handleClick={handleClick} />
       {defMap.size == 0 && <ReactLoading />}
       <button className="bg-pink-100">Create new story</button>
-      <Definition def={selectedWord}/>
+      <Definition word={selectedWord} def={defMap.get(selectedWord)}/>
     </div>
   )
 }

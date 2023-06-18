@@ -1,11 +1,12 @@
 type Props = {
+    word: string;
     def: string;
 }
 
-export default function Definition({def}: Props) {
+export default function Definition({word, def}: Props) {
     return (
         <>
-            <p className="text-2xl">{def}</p>
+            <p className="text-2xl"><span className="font-bold">{word}</span>: {def}</p>
         </>
     )
 }

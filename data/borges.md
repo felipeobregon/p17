@@ -1,0 +1,13 @@
+Título: "El Laberinto de los Tiempos"
+
+En un lejano lugar, donde el norte y el sur se entrelazan en un abrazo indiscernible, existía una biblioteca llamada "La Eternidad". Este lugar inmenso era custodiado por un anciano de nombre Mateo, quien era conocido por su inquietante sabiduría. La biblioteca era una maravilla en sí misma, donde los libros parecían no tener fin, las páginas contenían historias de cada época y cada civilización, incluso las que habían desaparecido sin dejar rastro.
+
+Un día, Mateo recibió la visita de un joven llamado Pedro, un ávido lector y aspirante a escritor, que buscaba las respuestas a preguntas que todavía no sabía cómo formular. El anciano, con una sonrisa sabia, lo dirigió hacia un libro particularmente antiguo, cuyas cubiertas parecían haber sobrevivido a varias generaciones de lectores. "Este es el libro que buscas, Pedro", le dijo.
+
+El joven tomó el libro con cierto temor reverencial. Al abrirlo, se dio cuenta de que todas las páginas estaban en blanco. Desconcertado, Pedro confrontó a Mateo: "Las páginas están vacías, anciano. ¿Es esto una broma?" Pero el anciano, con su sonrisa irónica intacta, respondió: "No, joven Pedro. El libro está lleno de historias. Pero solo puedes verlas cuando estás listo para escribirlas tú mismo".
+
+Pedro pasó días, semanas, meses en la biblioteca. Cada día leía más, escribía más, y cada vez que abría el libro en blanco, descubría una nueva historia que parecía surgir desde las profundidades de su propia imaginación. El tiempo parecía disolverse dentro de la biblioteca, y Pedro pronto dejó de contar los días.
+
+Un día, al abrir el libro en blanco, Pedro descubrió que ya no era un joven. Se había convertido en un anciano. Al mirar alrededor, descubrió que Mateo ya no estaba, pero la biblioteca seguía allí, intacta, eterna. Al mirar en el espejo, no vio su rostro, sino el rostro de Mateo.
+
+Pedro, ahora Mateo, comprendió que la biblioteca no era un lugar, sino un estado de la mente, un laberinto de tiempos y posibilidades, un reflejo de la eternidad de la existencia humana y su incesante búsqueda de respuestas. En las páginas en blanco del libro, él no sólo había descubierto historias perdidas, sino que también había descubierto su propio ser, su propia historia. En ese momento, entendió que la 'Eternidad' era, de hecho, él mismo, un laberinto de memorias y tiempos, donde cada lector, cada soñador, podría perderse y encontrarse a la vez.

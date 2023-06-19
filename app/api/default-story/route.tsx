@@ -4,9 +4,9 @@ import { readFile } from 'node:fs/promises';
 
 export async function GET() {
 
-    const contents = await readFile('data/hello.md', { encoding: 'utf8' });
-    console.log(contents);
+    const story = await readFile('data/hello.md', { encoding: 'utf8' });
+    console.log(story);
 
 
-    return NextResponse.json({ contents })
+    return NextResponse.json({ story })
 }

@@ -13,7 +13,7 @@ export default function Text({ text, defMap, handleClick }: Props) {
     })
 
     return (
-        <p className="text-4xl break-words">
+        <p className="text-2xl font-serif break-words">
             {words}
         </p>
     )

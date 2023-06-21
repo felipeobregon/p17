@@ -45,10 +45,10 @@ export default function Home() {
   return (
     <div className="flex flex-col max-w-2xl mx-auto h-screen">
       <h1 className="text-blue-500">Graded Korean!</h1>
-      <Text text={storyText} defMap={defMap} handleClick={handleClick} />
-      {defMap.size == 0 && <ReactLoading />}
-      <button className="bg-pink-100">Create new story</button>
-      <Definition word={selectedWord} def={defMap.get(selectedWord)}/>
+      <div className="flex">
+        <Text text={storyText} defMap={defMap} handleClick={handleClick} />
+        <Definition word={selectedWord} def={defMap.get(selectedWord)}/>
+      </div>
     </div>
   )
 }

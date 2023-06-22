@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react'
 import ReactLoading from 'react-loading'
 import createList from '@/lib/create-list'
 import getStory from '@/lib/get-story'
+import SideMenu from '@/components/SideMenu'
 
 export default function Home() {
 
@@ -45,6 +46,7 @@ export default function Home() {
   return (
     <div className="flex flex-col max-w-2xl mx-auto h-screen">
       <h1 className="text-blue-500">Graded Korean!</h1>
+      <SideMenu />
       <div className="flex">
         <Text text={storyText} defMap={defMap} handleClick={handleClick} />
         <Definition word={selectedWord} def={defMap.get(selectedWord)}/>

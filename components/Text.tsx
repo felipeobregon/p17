@@ -1,4 +1,3 @@
-import { Card } from 'antd'
 
 type Props = {
     text: string;
@@ -15,10 +14,8 @@ export default function Text({ text, defMap, handleClick }: Props) {
     })
 
     return (
-        <Card loading={text ? false : true}>
-            <p className="text-2xl font-serif break-words">
-                {words}
-            </p>
-        </Card>
+        <p className="bg-blue-500 border-8  rounded-lg text-2xl font-serif break-words">
+            {words}
+        </p>
     )
 }

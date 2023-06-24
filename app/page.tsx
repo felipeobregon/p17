@@ -8,6 +8,7 @@ import ReactLoading from 'react-loading'
 import createList from '@/lib/create-list'
 import getStory from '@/lib/get-story'
 import SideMenu from '@/components/SideMenu'
+import Prompt from '@/components/Prompt'
 
 export default function Home() {
 
@@ -23,31 +24,42 @@ export default function Home() {
   }
 
   // make fetch to create defMap
-  useEffect(() => {
-    const fetchData = async () => {
-      const newMap = await createList(storyText.split(' '))
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const newMap = await createList(storyText.split(' '))
 
-      setDefMap(newMap)
-    }
+  //     setDefMap(newMap)
+  //   }
 
-    fetchData()
-  }, [storyText])
+  //   fetchData()
+  // }, [storyText])
 
 
   // load storyText
-  useEffect(() => {
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const res = await getStory()
+  //     setStoryText(res.story)
+  //   }
+  //   fetchData()
+  // }, [])
+
+  const handlePrompt = (prompt: string) => {
+    console.log(prompt)
+
     const fetchData = async () => {
-      const res = await getStory()
-      setStoryText(res.story)
+      const story = await getStory(prompt)
+      setStoryText(story)
     }
     fetchData()
-  }, [])
+  }
 
   return (
     <div className="flex flex-col max-w-2xl mx-auto h-screen">
       <h1 className="text-blue-500">Graded Korean!</h1>
       <SideMenu />
-      <div className="flex">
+      <div>
+        <Prompt handleClick={handlePrompt}/>
         <Text text={storyText} defMap={defMap} handleClick={handleClick} />
         <Definition word={selectedWord} def={defMap.get(selectedWord)}/>
       </div>

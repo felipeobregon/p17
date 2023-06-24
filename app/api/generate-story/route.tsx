@@ -16,20 +16,24 @@ function createPrompt(text: string) {
 
 
 export async function POST(request: Request) {
-    let text = await request.text()
-    let response = await openai.createCompletion({
-        model: "text-davinci-003",
-        prompt: createPrompt(text),
-        max_tokens: 200,
-        temperature: 0,
-    });
+    try {
+        let text = await request.text();
+
+        let response = await openai.createCompletion({
+            model: "text-davinci-003",
+            prompt: createPrompt(text),
+            max_tokens: 200,
+            temperature: 0,
+        });
+
+        let story = response.data.choices[0].text;
 
 
-    let story = response.data.choices[0].text
-    
-    console.log(story)
-
-    
-    return NextResponse.json({ story })
-
+        return NextResponse.json({ story });
+    } catch (error) {
+        // Handle the error
+        console.error("An error occurred:", error);
+        console.log("End Error " + new Date())
+        return NextResponse.error()
+    }
 }

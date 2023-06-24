@@ -1,6 +1,10 @@
 import { ChangeEvent, useState } from "react"
 
-export default function Prompt(handleClick: () => void) {
+type Props = {
+    handleClick: (prompt: string) => void
+}
+
+export default function Prompt({handleClick} : Props) {
     const [inputValue, setInputValue] = useState<string>('')
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -11,7 +15,7 @@ export default function Prompt(handleClick: () => void) {
         <>
             <label>Prompt: </label>
             <input value={inputValue} onChange={handleInputChange}/>
-            <button onClick={handleClick}>Submit</button>
+            <button onClick={() => handleClick(inputValue)}>Submit</button>
         </>
     )
 }

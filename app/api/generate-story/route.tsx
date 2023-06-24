@@ -9,7 +9,7 @@ const openai = new OpenAIApi(configuration);
 
 function createPrompt(text: string) {
 
-    const prompt = `Write a short story in Spanish.`
+    const prompt = `Write a short story in Spanish about ${text}.`
     return prompt
 
 }

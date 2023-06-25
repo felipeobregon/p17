@@ -14,6 +14,7 @@ export default function Home() {
 
   const [storyText, setStoryText] = useState<string>('')
   const [defMap, setDefMap] = useState(new Map())
+  const [isLoadingText, setIsLoadingText] = useState<boolean>(false)
 
   // last clicked word
 
@@ -38,8 +39,9 @@ export default function Home() {
     console.log(prompt)
 
     const fetchData = async () => {
-
+      setIsLoadingText(true)
       const story = await getStory(prompt)
+      setIsLoadingText(false)
       setStoryText(story)
     }
     fetchData()
@@ -51,7 +53,7 @@ export default function Home() {
       <SideMenu />
       <div>
         <Prompt handleClick={handlePrompt}/>
-        <Text text={storyText} handleClick={handleClick} />
+        <Text loading={isLoadingText} text={storyText} handleClick={handleClick} />
         <Definition word={selectedWord} def={defMap.get(selectedWord)}/>
       </div>
     </div>

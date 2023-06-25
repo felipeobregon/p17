@@ -34,20 +34,11 @@ export default function Home() {
   //   fetchData()
   // }, [storyText])
 
-
-  // load storyText
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const res = await getStory()
-  //     setStoryText(res.story)
-  //   }
-  //   fetchData()
-  // }, [])
-
   const handlePrompt = (prompt: string) => {
     console.log(prompt)
 
     const fetchData = async () => {
+
       const story = await getStory(prompt)
       setStoryText(story)
     }

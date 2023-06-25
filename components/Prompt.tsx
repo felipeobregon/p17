@@ -14,7 +14,7 @@ export default function Prompt({handleClick} : Props) {
     return (
         <>
             <label>Prompt: </label>
-            <input value={inputValue} onChange={handleInputChange}/>
+            <input className="border-2 focus:outline-none" value={inputValue} onChange={handleInputChange}/>
             <button onClick={() => handleClick(inputValue)}>Submit</button>
         </>
     )

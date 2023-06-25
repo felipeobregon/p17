@@ -51,7 +51,7 @@ export default function Home() {
       <SideMenu />
       <div>
         <Prompt handleClick={handlePrompt}/>
-        <Text text={storyText} defMap={defMap} handleClick={handleClick} />
+        <Text text={storyText} handleClick={handleClick} />
         <Definition word={selectedWord} def={defMap.get(selectedWord)}/>
       </div>
     </div>

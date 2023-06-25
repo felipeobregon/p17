@@ -1,11 +1,10 @@
 
 type Props = {
     text: string;
-    defMap: Map<string, string>;
     handleClick: (word: string) => void
 }
 
-export default function Text({ text, defMap, handleClick }: Props) {
+export default function Text({ text, handleClick }: Props) {
     if (text) {
         const words = text.split(' ').map((word, index) => {
             return <span key={index}

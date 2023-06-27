@@ -51,14 +51,26 @@ export async function POST(request: Request) {
             temperature: 0,
         });
 
+        
         let res = response.data.choices[0].message.content;
+        console.log(res)
 
+        try {
+            let parsedRes = JSON.parse(res);
+            return NextResponse.json(parsedRes);
+        } catch (parseError) {
+            console.error("JSON Parsing Error:", parseError);
+            return NextResponse.error()
+        }
 
-        return NextResponse.json(JSON.parse(res));
     } catch (error) {
         // Handle the error
+
+
+        
+        console.log("START ERROR " + new Date())
         console.error("An error occurred:", error);
-        console.log("End Error " + new Date())
+        console.log("END ERROR " + new Date())
         return NextResponse.error()
     }
 }

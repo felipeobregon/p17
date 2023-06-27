@@ -60,7 +60,7 @@ export async function POST(request: Request) {
             return NextResponse.json(parsedRes);
         } catch (parseError) {
             console.error("JSON Parsing Error:", parseError);
-            return NextResponse.error()
+            return NextResponse.json({ def: 'none'})
         }
 
     } catch (error) {

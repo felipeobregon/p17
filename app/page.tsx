@@ -13,7 +13,7 @@ import Prompt from '@/components/Prompt'
 export default function Home() {
 
   const [storyText, setStoryText] = useState<string>('')
-  const [defMap, setDefMap] = useState(new Map())
+  const [defMap, setDefMap] = useState<Map<string,string>>(new Map())
   const [isLoadingText, setIsLoadingText] = useState<boolean>(false)
 
   // last clicked word

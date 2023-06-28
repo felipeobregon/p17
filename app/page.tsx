@@ -50,6 +50,11 @@ export default function Home() {
     fetchData()
   }
 
+  
+  const selectedDef = defMap.get(selectedWord)
+  const displayDef = selectedDef == undefined ? 'none' : selectedDef
+
+
   return (
     <div className="flex flex-col max-w-2xl mx-auto h-screen">
       <h1 className="text-blue-500">Graded Korean!</h1>
@@ -57,7 +62,7 @@ export default function Home() {
       <div>
         <Prompt handleClick={handlePrompt}/>
         <Text loading={isLoadingText} text={storyText} handleClick={handleClick} />
-        <Definition word={selectedWord} def={defMap.get(selectedWord)}/>
+        <Definition word={selectedWord} def={displayDef}/>
       </div>
     </div>
   )

@@ -25,15 +25,18 @@ export default function Home() {
   }
 
   // make fetch to create defMap
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const newMap = await createList(storyText.split(' '))
+  useEffect(() => {
+    const fetchData = async () => {
+      const newMap = await createList(storyText)
 
-  //     setDefMap(newMap)
-  //   }
+      // createList call might fail, you have to handle that
 
-  //   fetchData()
-  // }, [storyText])
+      setDefMap(newMap)
+    }
+
+    if (storyText)
+      fetchData()
+  }, [storyText])
 
   const handlePrompt = (prompt: string) => {
     console.log(prompt)

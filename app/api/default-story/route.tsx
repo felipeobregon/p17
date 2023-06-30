@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 
 export async function GET() {
 
-    const story = await readFile('data/hello.md', { encoding: 'utf8' });
+    const story = await readFile('data/short.md', { encoding: 'utf8' });
     console.log(story);
 
 

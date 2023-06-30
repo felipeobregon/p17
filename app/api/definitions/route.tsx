@@ -43,6 +43,7 @@ export async function POST(request: Request) {
         let response = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
             messages: [
+                { "role": "system", "content": "Provide definition of each word. Format as JSON."},
                 { "role": "user", "content": "El hombre comio la manzana." },
                 { "role": "assistant", "content": exampleResponse },
                 { "role": "user", "content": text }
@@ -57,9 +58,11 @@ export async function POST(request: Request) {
 
         try {
             let parsedRes = JSON.parse(res);
+            console.log("\x1b[33m JSON Parse successful")
             return NextResponse.json(parsedRes);
         } catch (parseError) {
-            console.error("JSON Parsing Error:", parseError);
+            console.error("\x1b[31m JSON Parsing Error:", parseError);
+
             return NextResponse.json({ def: 'none'})
         }
 

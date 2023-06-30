@@ -1,0 +1,1 @@
+Había una vez en un pequeño pueblo llamado San Cristóbal, un niño llamado Alejandro. Alejandro vivía con su abuela en una modesta casa cerca del bosque. Era un niño curioso y aventurero, siempre buscando emociones nuevas.
